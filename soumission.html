@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Entreprendre - Soumission de Projet</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-lightbulb"></i>
+                <h1>Challenge Entreprendre</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="soumission.html" class="active">Participer</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li><a href="login.html" class="btn-login">Connexion</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Soumettre un Projet</h1>
+            <p>Remplissez le formulaire ci-dessous pour participer au Challenge Entreprendre</p>
+        </div>
+    </section>
+
+    <section class="submission-form">
+        <div class="container">
+            <div class="form-container">
+                <form id="project-submission">
+                    <div class="form-section">
+                        <h2>Informations sur le Projet</h2>
+                        
+                        <div class="form-group">
+                            <label for="project-title">Titre du Projet <span class="required">*</span></label>
+                            <input type="text" id="project-title" name="project-title" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="project-description">Description du Projet <span class="required">*</span></label>
+                            <textarea id="project-description" name="project-description" rows="5" required></textarea>
+                            <div class="character-count">
+                                <span id="description-count">0</span>/500 caractères maximum
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="project-idea">Idée du Projet en Détail <span class="required">*</span></label>
+                            <textarea id="project-idea" name="project-idea" rows="8" required></textarea>
+                            <div class="character-count">
+                                <span id="idea-count">0</span>/2000 caractères maximum
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h2>Informations de Contact Principal</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="contact-name">Nom <span class="required">*</span></label>
+                                <input type="text" id="contact-name" name="contact-name" required>
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="contact-firstname">Prénom <span class="required">*</span></label>
+                                <input type="text" id="contact-firstname" name="contact-firstname" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="contact-email">Email <span class="required">*</span></label>
+                                <input type="email" id="contact-email" name="contact-email" required>
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="contact-phone">Téléphone <span class="required">*</span></label>
+                                <input type="tel" id="contact-phone" name="contact-phone" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section" id="team-members-section">
+                        <h2>Membres de l'Équipe</h2>
+                        <p class="section-desc">Ajoutez les informations des autres membres de votre équipe</p>
+                        
+                        <div class="team-member" data-member-id="1">
+                            <h3>Membre 1</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="member-name-1">Nom</label>
+                                    <input type="text" id="member-name-1" name="member-name-1">
+                                </div>
+                                
+                                <div class="form-group half">
+                                    <label for="member-firstname-1">Prénom</label>
+                                    <input type="text" id="member-firstname-1" name="member-firstname-1">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="member-email-1">Email</label>
+                                    <input type="email" id="member-email-1" name="member-email-1">
+                                </div>
+                                
+                                <div class="form-group half">
+                                    <label for="member-phone-1">Téléphone</label>
+                                    <input type="tel" id="member-phone-1" name="member-phone-1">
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-danger remove-member" disabled>Supprimer</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="add-member" class="btn btn-secondary">
+                            <i class="fas fa-plus"></i> Ajouter un membre
+                        </button>
+                        <button type="submit" class="btn btn-primary">Soumettre le Projet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-lightbulb"></i>
+                    <h2>Challenge Entreprendre</h2>
+                </div>
+                <div class="footer-links">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="soumission.html">Participer</a></li>
+                        <li><a href="projets.html">Projets</a></li>
+                        <li><a href="login.html">Connexion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> contact@challenge-entreprendre.com</p>
+                    <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Challenge Entreprendre. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
