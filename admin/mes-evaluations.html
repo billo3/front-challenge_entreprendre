@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mes Évaluations - Admin Challenge Entreprendre</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #004085;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #004085;
+        }
+
+        .search-container {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .search-container input[type="search"] {
+            padding: 0.5rem;
+            width: 240px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-container input[type="search"]:focus {
+            border-color: #004085;
+            outline: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #e9ecef;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        tr:hover {
+            background-color: #f1f8ff;
+        }
+
+        .status-submitted {
+            color: #155724;
+            background-color: #d4edda;
+            padding: 0.2em 0.5em;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .status-locked {
+            color: #856404;
+            background-color: #fff3cd;
+            padding: 0.2em 0.5em;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        button.view-btn {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 0.35rem 0.65rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        button.view-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+
+            th,
+            td {
+                padding: 0.4rem;
+                font-size: 0.9rem;
+            }
+
+            .search-container input[type="search"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>Admin - Mes Évaluations</header>
+    <main>
+        <nav class="admin-nav">
+            <ul>
+                <li class="active">
+                    <a href="membre-jury.html"><i class="fas fa-tachometer-alt"></i> Tableau de Bord</a>
+                </li>
+                <li>
+                    <a href="mes-evaluations.html"><i class="fas fa-clipboard-check"></i> Mes Évaluations</a>
+                </li>
+                <li>
+                    <a href="projets-a-evaluer-membre.html"><i class="fas fa-project-diagram"></i> Projets à
+                        Évaluer</a>
+                </li>
+                <li>
+                    <a href="mon-profil-membre.html"><i class="fas fa-user-circle"></i> Mon Profil</a>
+                </li>
+            </ul>
+        </nav>
+        <h1>Mes Évaluations</h1>
+        <div class="search-container">
+            <input type="search" id="searchInput" placeholder="Rechercher par titre de projet..." />
+        </div>
+        <table id="evaluationsTable" aria-label="Liste des évaluations">
+            <thead>
+                <tr>
+                    <th data-column="project" data-order="desc">Projet &#x25B2;</th>
+                    <th data-column="submitted_at" data-order="desc">Date soumission &#x25B2;</th>
+                    <th data-column="status" data-order="desc">État</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes seront générées par JavaScript -->
+            </tbody>
+        </table>
+    </main>
+    <script>
+        // Exemple de données statiques simulant les évaluations de l'utilisateur
+        const evaluations = [
+            {
+                id: 1,
+                project: 'Application mobile innovante',
+                submitted_at: '2024-04-10 14:30',
+                status: 'SUBMITTED',
+            },
+            {
+                id: 2,
+                project: 'Plateforme e-commerce durable',
+                submitted_at: '2024-03-25 12:10',
+                status: 'LOCKED',
+            },
+            {
+                id: 3,
+                project: 'Service de livraison écologique',
+                submitted_at: '2024-04-01 09:00',
+                status: 'SUBMITTED',
+            },
+        ];
+
+        const tableBody = document.querySelector('#evaluationsTable tbody');
+        const searchInput = document.getElementById('searchInput');
+        const statusLabels = {
+            SUBMITTED: '<span class="status-submitted">Soumis</span>',
+            LOCKED: '<span class="status-locked">Verrouillé</span>',
+        };
+
+        function renderTable(data) {
+            tableBody.innerHTML = '';
+            data.forEach(evaluation => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+          <td>${evaluation.project}</td>
+          <td>${evaluation.submitted_at}</td>
+          <td>${statusLabels[evaluation.status] || evaluation.status}</td>
+          <td><button class="view-btn" onclick="viewEvaluation(${evaluation.id})">Voir</button></td>
+        `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        function viewEvaluation(id) {
+            alert('Ouvrir les détails de l\'évaluation #' + id);
+            // Ici tu peux rediriger vers une page détail ou ouvrir un modal
+        }
+
+        function filterTable() {
+            const filter = searchInput.value.toLowerCase();
+            const filtered = evaluations.filter(e => e.project.toLowerCase().includes(filter));
+            renderTable(filtered);
+        }
+
+        // Tri simple des colonnes (projet et date)
+        document.querySelectorAll('th[data-column]').forEach(header => {
+            header.addEventListener('click', () => {
+                const column = header.getAttribute('data-column');
+                const order = header.getAttribute('data-order');
+                const newOrder = order === 'desc' ? 'asc' : 'desc';
+                header.setAttribute('data-order', newOrder);
+
+                evaluations.sort((a, b) => {
+                    if (column === 'submitted_at') {
+                        const dateA = new Date(a.submitted_at);
+                        const dateB = new Date(b.submitted_at);
+                        return newOrder === 'asc' ? dateA - dateB : dateB - dateA;
+                    }
+                    else {
+                        const valA = a[column].toLowerCase();
+                        const valB = b[column].toLowerCase();
+                        if (valA < valB) return newOrder === 'asc' ? -1 : 1;
+                        if (valA > valB) return newOrder === 'asc' ? 1 : -1;
+                        return 0;
+                    }
+                });
+
+                document.querySelectorAll('th[data-column]').forEach(th => {
+                    if (th !== header) {
+                        th.setAttribute('data-order', 'desc');
+                        th.innerHTML = th.innerHTML.replace(' ▲', '').replace(' ▼', '');
+                    }
+                });
+                header.innerHTML = header.textContent.trim() + (newOrder === 'asc' ? ' ▲' : ' ▼');
+
+                renderTable(evaluations);
+            });
+        });
+
+        searchInput.addEventListener('input', filterTable);
+
+        renderTable(evaluations);
+    </script>
+</body>
+
+</html>

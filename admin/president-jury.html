@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body class="admin-body">
     <div class="admin-container">
         <aside class="admin-sidebar">
@@ -21,7 +23,7 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
+
             <div class="admin-profile">
                 <div class="profile-avatar">
                     <i class="fas fa-gavel"></i>
@@ -31,7 +33,7 @@
                     <span class="role">Président du Jury</span>
                 </div>
             </div>
-            
+
             <nav class="admin-nav">
                 <ul>
                     <li class="active">
@@ -54,30 +56,30 @@
                     </li>
                 </ul>
             </nav>
-            
+
             <div class="sidebar-footer">
                 <a href="../index.html"><i class="fas fa-home"></i> Site Public</a>
                 <a href="../login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
             </div>
         </aside>
-        
+
         <main class="admin-main">
             <div class="admin-topbar">
                 <button class="sidebar-toggle">
                     <i class="fas fa-bars"></i>
                 </button>
-                
+
                 <div class="topbar-search">
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Rechercher...">
                 </div>
-                
+
                 <div class="topbar-actions">
                     <div class="topbar-notification">
                         <i class="fas fa-bell"></i>
                         <span class="notification-badge">2</span>
                     </div>
-                    
+
                     <div class="topbar-profile">
                         <i class="fas fa-user-circle"></i>
                         <span>Pierre Martin</span>
@@ -85,13 +87,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="admin-content">
                 <div class="page-title">
                     <h1>Tableau de Bord Président du Jury</h1>
                     <p>Gérez vos évaluations et celles de votre jury</p>
                 </div>
-                
+
                 <div class="dashboard-stats">
                     <div class="stat-card">
                         <div class="stat-icon">
@@ -102,7 +104,7 @@
                             <p class="stat-number">12</p>
                         </div>
                     </div>
-                    
+
                     <div class="stat-card">
                         <div class="stat-icon">
                             <i class="fas fa-check-circle"></i>
@@ -112,7 +114,7 @@
                             <p class="stat-number">8</p>
                         </div>
                     </div>
-                    
+
                     <div class="stat-card">
                         <div class="stat-icon">
                             <i class="fas fa-user-check"></i>
@@ -122,7 +124,7 @@
                             <p class="stat-number">4/5</p>
                         </div>
                     </div>
-                    
+
                     <div class="stat-card">
                         <div class="stat-icon">
                             <i class="fas fa-trophy"></i>
@@ -133,12 +135,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="dashboard-widgets">
                     <div class="widget evaluation-progress">
                         <div class="widget-header">
                             <h3>Progression des Évaluations</h3>
-                            <a href="evaluations.html" class="widget-action">Détails <i class="fas fa-arrow-right"></i></a>
+                            <a href="evaluations.html" class="widget-action">Détails <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                         <div class="widget-content">
                             <div class="progress-chart">
@@ -149,7 +152,7 @@
                                 <div class="progress-bar">
                                     <div class="progress-fill" style="width: 67%"></div>
                                 </div>
-                                
+
                                 <div class="chart-details">
                                     <div class="chart-item">
                                         <span class="chart-label">Vos évaluations</span>
@@ -158,7 +161,7 @@
                                             <span>75%</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="chart-item">
                                         <span class="chart-label">Jury collectif</span>
                                         <div class="mini-progress">
@@ -168,14 +171,14 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="progress-summary">
                                 <p>8 évaluations complétées sur 12 projets</p>
                                 <p class="deadline">Date limite: <strong>15 juin 2025</strong></p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="widget jury-status">
                         <div class="widget-header">
                             <h3>Statut du Jury</h3>
@@ -199,7 +202,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="member">
                                     <div class="member-avatar">
                                         <i class="fas fa-user-circle"></i>
@@ -216,7 +219,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="member">
                                     <div class="member-avatar">
                                         <i class="fas fa-user-circle"></i>
@@ -233,7 +236,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="member">
                                     <div class="member-avatar">
                                         <i class="fas fa-user-circle"></i>
@@ -251,20 +254,23 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="jury-actions">
-                                <button class="btn btn-sm btn-secondary"><i class="fas fa-envelope"></i> Rappel Collectif</button>
-                                <button class="btn btn-sm btn-primary"><i class="fas fa-user-check"></i> Marquer Présences</button>
+                                <button class="btn btn-sm btn-secondary"><i class="fas fa-envelope"></i> Rappel
+                                    Collectif</button>
+                                <button class="btn btn-sm btn-primary"><i class="fas fa-user-check"></i> Marquer
+                                    Présences</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="dashboard-widgets">
                     <div class="widget project-scoring">
                         <div class="widget-header">
                             <h3>Classement Actuel des Projets</h3>
-                            <a href="classement.html" class="widget-action">Voir tout <i class="fas fa-arrow-right"></i></a>
+                            <a href="classement.html" class="widget-action">Voir tout <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                         <div class="widget-content">
                             <div class="scoring-legend">
@@ -281,7 +287,7 @@
                                     <span>Qualifié</span>
                                 </div>
                             </div>
-                            
+
                             <div class="project-scores">
                                 <div class="project-score-item qualify">
                                     <div class="project-rank">1</div>
@@ -303,7 +309,7 @@
                                         <button class="btn btn-sm btn-primary">Ajuster</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="project-score-item qualify">
                                     <div class="project-rank">2</div>
                                     <div class="project-info">
@@ -324,7 +330,7 @@
                                         <button class="btn btn-sm btn-primary">Ajuster</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="project-score-item qualify">
                                     <div class="project-rank">3</div>
                                     <div class="project-info">
@@ -345,7 +351,7 @@
                                         <button class="btn btn-sm btn-primary">Ajuster</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="project-score-item">
                                     <div class="project-rank">4</div>
                                     <div class="project-info">
@@ -367,7 +373,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="qualification-actions">
                                 <div class="qualification-setting">
                                     <label>Projets qualifiés pour la phase suivante:</label>
@@ -381,7 +387,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="widget action-items">
                         <div class="widget-header">
                             <h3>Actions Requises</h3>
@@ -401,7 +407,7 @@
                                         <span class="priority high">Haute</span>
                                     </div>
                                 </li>
-                                
+
                                 <li class="action-item medium-priority">
                                     <div class="action-icon">
                                         <i class="fas fa-user-check"></i>
@@ -415,7 +421,7 @@
                                         <span class="priority medium">Moyenne</span>
                                     </div>
                                 </li>
-                                
+
                                 <li class="action-item low-priority">
                                     <div class="action-icon">
                                         <i class="fas fa-clipboard-list"></i>
@@ -437,4 +443,5 @@
         </main>
     </div>
 </body>
+
 </html>
