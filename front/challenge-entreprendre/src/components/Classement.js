@@ -1,18 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Classement() {
-    const projects = [
-        { rank: 1, name: 'EcoDrive', juryScore: 8.5, adjustedScore: 8.8, qualified: true },
-        { rank: 2, name: 'MediConnect', juryScore: 8.2, adjustedScore: 8.5, qualified: true },
-        { rank: 3, name: 'SmartFarming', juryScore: 7.9, adjustedScore: 8.0, qualified: true },
-        { rank: 4, name: 'UrbanGreen', juryScore: 7.6, adjustedScore: 7.6, qualified: false },
-    ];
+    const [projects, setProjects] = useState([
+        { id: 1, name: 'EcoDrive', juryScore: 8.5, adjustedScore: 8.8, qualified: true },
+        { id: 2, name: 'MediConnect', juryScore: 8.2, adjustedScore: 8.5, qualified: true },
+        { id: 3, name: 'SmartFarming', juryScore: 7.9, adjustedScore: 8.0, qualified: true },
+        { id: 4, name: 'UrbanGreen', juryScore: 7.6, adjustedScore: 7.6, qualified: false },
+    ]);
+    const [qualifiedCount, setQualifiedCount] = useState(3);
+    const [isValidated, setIsValidated] = useState(false);
+
+    const handleScoreChange = (id, value) => {
+        if (isValidated) {
+            alert('La sélection est validée, les scores ne peuvent plus être modifiés.');
+            return;
+        }
+        setProjects(projects.map((project) =>
+            project.id === id ? { ...project, adjustedScore: parseFloat(value) || '' } : project
+        ));
+    };
+
+    const handleQualifiedCountChange = (e) => {
+        if (isValidated) {
+            alert('La sélection est validée, le nombre de projets qualifiés ne peut plus être modifié.');
+            return;
+        }
+        const count = parseInt(e.target.value);
+        setQualifiedCount(count);
+        setProjects(projects.map((project, index) => ({
+            ...project,
+            qualified: index < count,
+        })));
+    };
+
+    const validateSelection = () => {
+        const invalidScores = projects.some((p) => !p.adjustedScore || p.adjustedScore < 0 || p.adjustedScore > 10);
+        if (invalidScores) {
+            alert('Veuillez entrer des scores valides (0-10) pour tous les projets.');
+            return;
+        }
+        setIsValidated(true);
+        alert('Sélection finale validée avec succès!');
+    };
 
     return (
         <div className="admin-content">
             <div className="page-title">
                 <h1>Classement</h1>
-                <p>Consultez le classement final des projets</p>
+                <p>Ajustez les scores et validez la sélection finale</p>
             </div>
 
             <div className="dashboard-stats">
@@ -32,10 +67,11 @@ function Classement() {
                     <div className="widget-header">
                         <h3>Classement des Projets</h3>
                         <div className="qualification-setting">
-                            <label>Filtrer: </label>
-                            <select>
-                                <option value="all">Tous les projets</option>
-                                <option value="qualified">Projets qualifiés</option>
+                            <label>Projets qualifiés: </label>
+                            <select value={qualifiedCount} onChange={handleQualifiedCountChange} disabled={isValidated}>
+                                {[1, 2, 3, 4].map((n) => (
+                                    <option key={n} value={n}>{n} projets</option>
+                                ))}
                             </select>
                         </div>
                     </div>
@@ -56,9 +92,9 @@ function Classement() {
                         </div>
 
                         <div className="project-scores">
-                            {projects.map((project) => (
-                                <div key={project.rank} className={`project-score-item ${project.qualified ? 'qualify' : ''}`}>
-                                    <div className="project-rank">{project.rank}</div>
+                            {projects.map((project, index) => (
+                                <div key={project.id} className={`project-score-item ${project.qualified ? 'qualify' : ''}`}>
+                                    <div className="project-rank">{index + 1}</div>
                                     <div className="project-info">
                                         <h4>{project.name}</h4>
                                         <div className="project-score-bars">
@@ -67,17 +103,22 @@ function Classement() {
                                                 <span>{project.juryScore}</span>
                                             </div>
                                             <div className="score-bar">
-                                                <div className="score-fill adjusted-score" style={{ width: `${project.adjustedScore * 10}%` }}></div>
-                                                <span>{project.adjustedScore}</span>
+                                                <input
+                                                    type="number"
+                                                    min="0"
+                                                    max="10"
+                                                    step="0.1"
+                                                    value={project.adjustedScore}
+                                                    onChange={(e) => handleScoreChange(project.id, e.target.value)}
+                                                    className="score-input"
+                                                    disabled={isValidated}
+                                                />
                                             </div>
                                         </div>
                                     </div>
                                     <div className="project-actions">
-                                        <button className="btn btn-sm btn-outline">
+                                        <button className="btn btn-sm btn-outline" disabled={isValidated}>
                                             <i className="fas fa-eye"></i> Voir
-                                        </button>
-                                        <button className="btn btn-sm btn-primary">
-                                            <i className="fas fa-edit"></i> Ajuster
                                         </button>
                                     </div>
                                 </div>
@@ -85,7 +126,9 @@ function Classement() {
                         </div>
 
                         <div className="qualification-actions">
-                            <button className="btn btn-primary">Exporter Classement</button>
+                            <button className="btn btn-primary" onClick={validateSelection} disabled={isValidated}>
+                                <i className="fas fa-check"></i> Valider Sélection Finale
+                            </button>
                         </div>
                     </div>
                 </div>

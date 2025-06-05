@@ -7,6 +7,7 @@ import Evaluations from './components/Evaluations';
 import ProjetsAEvaluer from './components/ProjetsAEvaluer';
 import MonJury from './components/MonJury';
 import Classement from './components/Classement';
+import ConsolidatedEvaluations from './components/ConsolidatedEvaluations';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Routes>
               <Route path="/" element={<PresidentJury />} />
               <Route path="/evaluations" element={<Evaluations />} />
+              <Route path="/evaluations-consolidees" element={<ConsolidatedEvaluations />} />
               <Route path="/projets-a-evaluer" element={<ProjetsAEvaluer />} />
               <Route path="/mon-jury" element={<MonJury />} />
               <Route path="/classement" element={<Classement />} />

@@ -1,11 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function JuryStatus() {
+    const navigate = useNavigate();
+
+    const handleMarquerPresences = () => {
+        navigate('/mon-jury'); // Redirection vers la page mon jury
+    };
+
     return (
         <div className="widget jury-status">
             <div className="widget-header">
                 <h3>Statut du Jury</h3>
-                <a href="mon-jury.html" className="widget-action">
+                <a href="mon-jury" className="widget-action">
                     Gérer <i className="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -84,8 +91,8 @@ function JuryStatus() {
                     <button className="btn btn-sm btn-secondary">
                         <i className="fas fa-envelope"></i> Rappel Collectif
                     </button>
-                    <button className="btn btn-sm btn-primary">
-                        <i className="fas fa-user-check"></i> Marquer Présences
+                    <button className="btn btn-sm btn-primary" onClick={handleMarquerPresences}>
+                        <i className="fas fa-user-check"> </i> Marquer Présences
                     </button>
                 </div>
             </div>

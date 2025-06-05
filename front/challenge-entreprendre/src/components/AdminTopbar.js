@@ -20,7 +20,7 @@ function AdminTopbar() {
 
                 <div className="topbar-profile">
                     <i className="fas fa-user-circle"></i>
-                    <span>Pierre Martin</span>
+                    <span>Billo the GOAT</span>
                     <i className="fas fa-chevron-down"></i>
                 </div>
             </div>

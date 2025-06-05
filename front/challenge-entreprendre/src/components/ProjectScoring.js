@@ -1,11 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Ajout de l'import
 
 function ProjectScoring() {
+    const navigate = useNavigate(); // Initialisation du hook
+
+    const handleAjusterClick = () => {
+        navigate('/projets-a-evaluer'); // Redirection vers la page souhaitée
+    };
+
     return (
         <div className="widget project-scoring">
             <div className="widget-header">
                 <h3>Classement Actuel des Projets</h3>
-                <a href="classement.html" className="widget-action">
+                <a href="/classement" className="widget-action">
                     Voir tout <i className="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -45,7 +52,7 @@ function ProjectScoring() {
                             <button className="btn btn-sm btn-outline">
                                 <i className="fas fa-eye"></i>
                             </button>
-                            <button className="btn btn-sm btn-primary">Ajuster</button>
+                            <button className="btn btn-sm btn-primary" onClick={handleAjusterClick}>Ajuster</button>
                         </div>
                     </div>
 
@@ -68,7 +75,7 @@ function ProjectScoring() {
                             <button className="btn btn-sm btn-outline">
                                 <i className="fas fa-eye"></i>
                             </button>
-                            <button className="btn btn-sm btn-primary">Ajuster</button>
+                            <button className="btn btn-sm btn-primary" onClick={handleAjusterClick}>Ajuster</button>
                         </div>
                     </div>
 
@@ -91,7 +98,7 @@ function ProjectScoring() {
                             <button className="btn btn-sm btn-outline">
                                 <i className="fas fa-eye"></i>
                             </button>
-                            <button className="btn btn-sm btn-primary">Ajuster</button>
+                            <button className="btn btn-sm btn-primary" onClick={handleAjusterClick}>Ajuster</button>
                         </div>
                     </div>
 
@@ -114,7 +121,7 @@ function ProjectScoring() {
                             <button className="btn btn-sm btn-outline">
                                 <i className="fas fa-eye"></i>
                             </button>
-                            <button className="btn btn-sm btn-primary">Ajuster</button>
+                            <button className="btn btn-sm btn-primary" onClick={handleAjusterClick}>Ajuster</button>
                         </div>
                     </div>
                 </div>
@@ -128,7 +135,7 @@ function ProjectScoring() {
                             <option value="5">5 projets</option>
                         </select>
                     </div>
-                    <button className="btn btn-primary">Finaliser Sélection</button>
+                    <button className="btn btn-primary" onClick={handleAjusterClick}>Finaliser Sélection</button>
                 </div>
             </div>
         </div>

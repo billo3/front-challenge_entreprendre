@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function MonJury() {
-    const juryMembers = [
-        { id: 1, name: 'Sophie Leclerc', role: 'Membre du jury', status: 'active', progress: 80 },
-        { id: 2, name: 'Robert Durand', role: 'Membre du jury', status: 'active', progress: 65 },
-        { id: 3, name: 'Nathalie Moreau', role: 'Membre du jury', status: 'active', progress: 45 },
-        { id: 4, name: 'Paul Lefevre', role: 'Membre du jury', status: 'inactive', progress: 0 },
-    ];
+    const [juryMembers, setJuryMembers] = useState([
+        { id: 1, name: 'Bachir Diop', role: 'Membre du jury', status: 'active', progress: 80, present: true },
+        { id: 2, name: 'Amadou LY', role: 'Membre du jury', status: 'active', progress: 65, present: true },
+        { id: 3, name: 'Babzo', role: 'Membre du jury', status: 'active', progress: 45, present: true },
+        { id: 4, name: 'El pepe', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
+    ]);
+
+    const togglePresence = (id) => {
+        setJuryMembers(juryMembers.map((member) =>
+            member.id === id
+                ? { ...member, present: !member.present, status: !member.present ? 'active' : 'inactive' }
+                : member
+        ));
+    };
+
+    const sendReminder = (name) => {
+        alert(`Rappel envoyé à ${name}`);
+    };
 
     return (
         <div className="admin-content">
             <div className="page-title">
                 <h1>Mon Jury</h1>
-                <p>Gérez les membres de votre jury et suivez leur progression</p>
+                <p>Gérez les membres de votre jury et leur présence</p>
             </div>
 
             <div className="dashboard-stats">
@@ -21,9 +33,9 @@ function MonJury() {
                         <i className="fas fa-users"></i>
                     </div>
                     <div className="stat-info">
-                        <h3>Membres Actifs</h3>
+                        <h3>Membres Présents</h3>
                         <p className="stat-number">
-                            {juryMembers.filter((member) => member.status === 'active').length}/{juryMembers.length}
+                            {juryMembers.filter((m) => m.present).length}/{juryMembers.length}
                         </p>
                     </div>
                 </div>
@@ -56,11 +68,14 @@ function MonJury() {
                                         </div>
                                     </div>
                                     <div className="jury-actions">
-                                        <button className="btn btn-sm btn-secondary">
-                                            <i className="fas fa-envelope"></i> Rappel
+                                        <button
+                                            className={`btn btn-sm ${member.present ? 'btn-secondary' : 'btn-primary'}`}
+                                            onClick={() => togglePresence(member.id)}
+                                        >
+                                            <i className="fas fa-user-check"></i> {member.present ? 'Marquer Absent' : 'Marquer Présent'}
                                         </button>
-                                        <button className="btn btn-sm btn-primary">
-                                            <i className="fas fa-user-check"></i> Marquer Présence
+                                        <button className="btn btn-sm btn-secondary" onClick={() => sendReminder(member.name)}>
+                                            <i className="fas fa-envelope"></i> Rappel
                                         </button>
                                     </div>
                                 </div>

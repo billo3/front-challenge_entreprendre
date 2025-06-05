@@ -26,7 +26,7 @@ function AdminSidebar() {
 
             <nav className="admin-nav">
                 <ul>
-                    <li className="active">
+                    <li>
                         <Link to="/">
                             <i className="fas fa-tachometer-alt"></i> Tableau de Bord
                         </Link>
@@ -34,6 +34,11 @@ function AdminSidebar() {
                     <li>
                         <Link to="/evaluations">
                             <i className="fas fa-clipboard-check"></i> Mes Évaluations
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/evaluations-consolidees">
+                            <i className="fas fa-table"></i> Évaluations Consolidées
                         </Link>
                     </li>
                     <li>
