@@ -28,11 +28,10 @@ function ProjetsAEvaluer() {
         // Tu peux ici faire une redirection ou ouvrir un modal d'évaluation
     };
 
-    // Fonction pour retourner la classe CSS selon le statut
     const getStatutClass = (statut) => {
         switch (statut) {
             case 'Soumis':
-                return 'statut soumi';
+                return 'statut soumis';
             case 'Incomplet':
                 return 'statut incomplet';
             case 'Qualifié Phase 1':
@@ -43,7 +42,7 @@ function ProjetsAEvaluer() {
     };
 
     return (
-        <div className="admin-content">
+        <div className="admin-content full-page">
             <div className="page-title">
                 <h1>Projets à Évaluer</h1>
                 <p>Évaluez les projets et ajustez les scores finaux</p>
@@ -61,8 +60,8 @@ function ProjetsAEvaluer() {
                 </div>
             </div>
 
-            <div className="dashboard-widgets">
-                <div className="widget">
+            <div className="dashboard-content">
+                <div className="widget full-width">
                     <div className="widget-header">
                         <h3>Liste des Projets</h3>
                         <Link to="/evaluations-consolidees" className="btn btn-primary">
@@ -70,7 +69,7 @@ function ProjetsAEvaluer() {
                         </Link>
                     </div>
                     <div className="widget-content">
-                        <table className="evaluation-table">
+                        <table className="evaluation-table full-table">
                             <thead>
                                 <tr>
                                     <th>Projet</th>
@@ -107,7 +106,6 @@ function ProjetsAEvaluer() {
                                 ))}
                             </tbody>
                         </table>
-                        {/* ...tu peux garder l'affichage par cartes si tu veux aussi... */}
                     </div>
                 </div>
             </div>

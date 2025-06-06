@@ -44,7 +44,7 @@ function Classement() {
     };
 
     return (
-        <div className="admin-content">
+        <div className="admin-content full-page">
             <div className="page-title">
                 <h1>Classement</h1>
                 <p>Ajustez les scores et validez la sélection finale</p>
@@ -62,8 +62,8 @@ function Classement() {
                 </div>
             </div>
 
-            <div className="dashboard-widgets">
-                <div className="widget project-scoring">
+            <div className="dashboard-content">
+                <div className="widget full-width project-scoring">
                     <div className="widget-header">
                         <h3>Classement des Projets</h3>
                         <div className="qualification-setting">
@@ -91,7 +91,7 @@ function Classement() {
                             </div>
                         </div>
 
-                        <div className="project-scores">
+                        <div className="project-scores full-table">
                             {projects.map((project, index) => (
                                 <div key={project.id} className={`project-score-item ${project.qualified ? 'qualify' : ''}`}>
                                     <div className="project-rank">{index + 1}</div>

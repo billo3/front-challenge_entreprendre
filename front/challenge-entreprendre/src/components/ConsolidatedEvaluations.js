@@ -25,19 +25,19 @@ function ConsolidatedEvaluations() {
   };
 
   return (
-    <div className="admin-content">
+    <div className="admin-content full-page">
       <div className="page-title">
         <h1>Évaluations Consolidées</h1>
         <p>Consultez les scores attribués par les membres du jury</p>
       </div>
 
-      <div className="dashboard-widgets">
-        <div className="widget">
+      <div className="dashboard-content">
+        <div className="widget full-width">
           <div className="widget-header">
             <h3>Scores des Projets</h3>
           </div>
           <div className="widget-content">
-            <table className="evaluation-table">
+            <table className="evaluation-table full-table">
               <thead>
                 <tr>
                   <th>Projet</th>
