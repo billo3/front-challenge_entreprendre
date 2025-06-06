@@ -21,7 +21,7 @@ function MonJury() {
     };
 
     return (
-        <div className="admin-content">
+        <div className="admin-content full-page">
             <div className="page-title">
                 <h1>Mon Jury</h1>
                 <p>Gérez les membres de votre jury et leur présence</p>
@@ -41,8 +41,8 @@ function MonJury() {
                 </div>
             </div>
 
-            <div className="dashboard-widgets">
-                <div className="widget jury-status">
+            <div className="dashboard-content">
+                <div className="widget full-width jury-status">
                     <div className="widget-header">
                         <h3>Membres du Jury</h3>
                         <button className="btn btn-primary">
@@ -50,7 +50,7 @@ function MonJury() {
                         </button>
                     </div>
                     <div className="widget-content">
-                        <div className="jury-members">
+                        <div className="jury-members full-table">
                             {juryMembers.map((member) => (
                                 <div key={member.id} className="member">
                                     <div className="member-avatar">
