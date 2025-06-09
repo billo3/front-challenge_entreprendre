@@ -1,11 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Ajout de l'import
+import { useNavigate } from 'react-router-dom';
 
-function ProjectScoring() {
-    const navigate = useNavigate(); // Initialisation du hook
+const ProjectScoring: React.FC = () => {
+    const navigate = useNavigate();
 
     const handleAjusterClick = () => {
-        navigate('/projets-a-evaluer'); // Redirection vers la page souhaitée
+        navigate('/projets-a-evaluer');
     };
 
     return (
@@ -140,6 +140,6 @@ function ProjectScoring() {
             </div>
         </div>
     );
-}
+};
 
 export default ProjectScoring;

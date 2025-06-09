@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EvaluationProgress() {
+const EvaluationProgress: React.FC = () => {
     return (
         <div className="widget evaluation-progress">
             <div className="widget-header">
@@ -45,6 +45,6 @@ function EvaluationProgress() {
             </div>
         </div>
     );
-}
+};
 
 export default EvaluationProgress;

@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 
-function MonJury() {
-    const [juryMembers, setJuryMembers] = useState([
+interface JuryMember {
+    id: number;
+    name: string;
+    role: string;
+    status: 'active' | 'inactive';
+    progress: number;
+    present: boolean;
+}
+
+const MonJury: React.FC = () => {
+    const [juryMembers, setJuryMembers] = useState<JuryMember[]>([
         { id: 1, name: 'Bachir Diop', role: 'Membre du jury', status: 'active', progress: 80, present: true },
         { id: 2, name: 'Amadou LY', role: 'Membre du jury', status: 'active', progress: 65, present: true },
         { id: 3, name: 'Babzo', role: 'Membre du jury', status: 'active', progress: 45, present: true },
         { id: 4, name: 'El pepe', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
     ]);
 
-    const togglePresence = (id) => {
+    const togglePresence = (id: number) => {
         setJuryMembers(juryMembers.map((member) =>
             member.id === id
                 ? { ...member, present: !member.present, status: !member.present ? 'active' : 'inactive' }
@@ -16,7 +25,7 @@ function MonJury() {
         ));
     };
 
-    const sendReminder = (name) => {
+    const sendReminder = (name: string) => {
         alert(`Rappel envoyé à ${name}`);
     };
 
@@ -86,6 +95,6 @@ function MonJury() {
             </div>
         </div>
     );
-}
+};
 
 export default MonJury;

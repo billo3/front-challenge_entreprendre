@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function JuryStatus() {
+const JuryStatus: React.FC = () => {
     const navigate = useNavigate();
 
     const handleMarquerPresences = () => {
-        navigate('/mon-jury'); // Redirection vers la page mon jury
+        navigate('/mon-jury');
     };
 
     return (
@@ -92,12 +92,12 @@ function JuryStatus() {
                         <i className="fas fa-envelope"></i> Rappel Collectif
                     </button>
                     <button className="btn btn-sm btn-primary" onClick={handleMarquerPresences}>
-                        <i className="fas fa-user-check"> </i> Marquer Présences
+                        <i className="fas fa-user-check"></i> Marquer Présences
                     </button>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default JuryStatus;

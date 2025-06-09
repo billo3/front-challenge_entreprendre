@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import StatCard from './StatCard';
 import EvaluationProgress from './EvaluationProgress';
 import JuryStatus from './JuryStatus';
-import ProjectScoring from './ProjectScoring';
+import ProjectScoring from '../pages/ProjectScoring';
 import ActionItems from './ActionItems';
 
-function PresidentJury() {
+const PresidentJury: React.FC = () => {
     return (
         <>
             <div className="page-title">
@@ -47,6 +47,6 @@ function PresidentJury() {
             </div>
         </>
     );
-}
+};
 
 export default PresidentJury;

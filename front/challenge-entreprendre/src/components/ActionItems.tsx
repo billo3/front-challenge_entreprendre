@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ActionItems() {
+const ActionItems: React.FC = () => {
     return (
         <div className="widget action-items">
             <div className="widget-header">
@@ -53,6 +53,6 @@ function ActionItems() {
             </div>
         </div>
     );
-}
+};
 
 export default ActionItems;
