@@ -103,9 +103,9 @@ const ProjetsAEvaluer: React.FC = () => {
                 <div className="widget full-width">
                     <div className="widget-header">
                         <h3>Liste des Projets</h3>
-                        <Link to="/evaluations-consolidees" className="btn btn-primary">
+                        {/* <Link to="/evaluations-consolidees" className="btn btn-primary">
                             <i className="fas fa-table"></i> Voir Évaluations Consolidées
-                        </Link>
+                        </Link> */}
                     </div>
                     <div className="widget-content">
                         <table className="evaluation-table full-table">

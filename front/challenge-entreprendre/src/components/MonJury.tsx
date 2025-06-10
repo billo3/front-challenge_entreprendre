@@ -69,12 +69,7 @@ const MonJury: React.FC = () => {
                                     <div className="member-info">
                                         <h4>{member.name}</h4>
                                         <span className="member-role">{member.role}</span>
-                                        <div className="member-progress">
-                                            <div className="mini-progress">
-                                                <div className="mini-fill" style={{ width: `${member.progress}%` }}></div>
-                                                <span>{member.progress}%</span>
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <div className="jury-actions">
                                         <button

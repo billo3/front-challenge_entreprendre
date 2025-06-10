@@ -5,7 +5,7 @@ const ProjectScoring: React.FC = () => {
     const navigate = useNavigate();
 
     const handleAjusterClick = () => {
-        navigate('/projets-a-evaluer');
+        navigate('/classement');
     };
 
     return (

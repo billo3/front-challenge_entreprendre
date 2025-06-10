@@ -26,12 +26,6 @@ const JuryStatus: React.FC = () => {
                         <div className="member-info">
                             <h4>Sophie Leclerc</h4>
                             <span className="member-role">Membre du jury</span>
-                            <div className="member-progress">
-                                <div className="mini-progress">
-                                    <div className="mini-fill" style={{ width: '80%' }}></div>
-                                    <span>80%</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -43,12 +37,7 @@ const JuryStatus: React.FC = () => {
                         <div className="member-info">
                             <h4>Robert Durand</h4>
                             <span className="member-role">Membre du jury</span>
-                            <div className="member-progress">
-                                <div className="mini-progress">
-                                    <div className="mini-fill" style={{ width: '65%' }}></div>
-                                    <span>65%</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
@@ -60,12 +49,7 @@ const JuryStatus: React.FC = () => {
                         <div className="member-info">
                             <h4>Nathalie Moreau</h4>
                             <span className="member-role">Membre du jury</span>
-                            <div className="member-progress">
-                                <div className="mini-progress">
-                                    <div className="mini-fill" style={{ width: '45%' }}></div>
-                                    <span>45%</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
@@ -77,12 +61,7 @@ const JuryStatus: React.FC = () => {
                         <div className="member-info">
                             <h4>Paul Lefevre</h4>
                             <span className="member-role">Membre du jury</span>
-                            <div className="member-progress">
-                                <div className="mini-progress">
-                                    <div className="mini-fill" style={{ width: '0%' }}></div>
-                                    <span>0%</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -76,11 +76,29 @@ const Classement: React.FC = () => {
             <h3>Classement des Projets</h3>
             <div className="qualification-setting">
               <label>Projets qualifiés: </label>
-              <select value={qualifiedCount} onChange={handleQualifiedCountChange} disabled={isValidated}>
-                {[1, 2, 3, 4].map((n) => (
-                  <option key={n} value={n}>{n} projets</option>
-                ))}
-              </select>
+              <input
+                type="number"
+                min={1}
+                max={projects.length}
+                value={qualifiedCount}
+                onChange={(e) => {
+                  if (isValidated) {
+                    alert('La sélection est validée, le nombre de projets qualifiés ne peut plus être modifié.');
+                    return;
+                  }
+                  let count = parseInt(e.target.value, 10);
+                  if (isNaN(count) || count < 1) count = 1;
+                  if (count > projects.length) count = projects.length;
+                  setQualifiedCount(count);
+                  setProjects(projects.map((project, index) => ({
+                    ...project,
+                    qualified: index < count,
+                  })));
+                }}
+                disabled={isValidated}
+                style={{ width: 60, marginLeft: 8 }}
+              />
+              <span style={{ marginLeft: 8 }}>/ {projects.length}</span>
             </div>
           </div>
           <div className="widget-content">
