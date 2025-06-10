@@ -9,24 +9,24 @@
 .statut.soumi {
     background: #e6f4ea;
     color: #6A5ACD;
-    /* Bleu violet remplace #219653 */
+    /* Bleu violet */
 }
 
 .statut.incomplet {
-    background: #fff7e6;
-    color: #A4B0B6;
-    /* Gris métallique remplace #b68900 */
+    background: #ede9fe;
+    color: #7c3aed;
+    /* Bleu-mauve */
 }
 
 .statut.qualifie {
     background: #e6f0fa;
-    color: #A6533E;
-    /* Marron remplace #2563eb */
+    color: #6A5ACD;
+    /* Bleu violet */
 }
 
 .btn-success {
     background: #6A5ACD;
-    /* Bleu violet remplace #22c55e */
+    /* Bleu violet */
     color: #fff;
     border: none;
     padding: 6px 14px;
@@ -35,7 +35,7 @@
 }
 
 .btn-success:hover {
-    background: #5A4AB8;
+    background: #5D43A3;
     /* Bleu violet foncé */
 }
 
@@ -264,19 +264,19 @@
 }
 
 .btn.btn-primary {
-    background: #A6533E;
-    /* Marron remplace #007bff */
+    background: #6A5ACD;
+    /* Bleu violet */
     color: #fff;
     border: none;
 }
 
 .btn.btn-primary:hover {
-    background: #8F3F2C;
-    /* Marron foncé */
+    background: #5D43A3;
+    /* Bleu violet foncé */
 }
 
 .btn.btn-primary:disabled {
-    background: #6c757d;
+    background: #a5b4fc;
     cursor: not-allowed;
 }
 
@@ -288,8 +288,8 @@
 
 .mini-fill {
     height: 6px;
-    background: #A6533E;
-    /* Marron remplace #007bff */
+    background: #6A5ACD;
+    /* Bleu violet */
     border-radius: 3px;
     transition: width 0.3s ease;
 }
@@ -337,8 +337,8 @@
 
 .sidebar-logo i {
     font-size: 1.25rem;
-    color: #B86B5A;
-    /* Marron clair remplace var(--primary-light) */
+    color: #6A5ACD;
+    /* Bleu violet */
     margin-right: 0.75rem;
 }
 
@@ -406,11 +406,11 @@
 }
 
 .admin-nav li.active a {
-    background-color: rgba(166, 83, 62, 0.2);
-    /* Marron clair pour l'effet */
+    background-color: rgba(106, 90, 205, 0.2);
+    /* Bleu violet transparent */
     color: white;
-    border-left: 3px solid #B86B5A;
-    /* Marron clair */
+    border-left: 3px solid #7C3AED;
+    /* Bleu violet accent */
 }
 
 .admin-nav li:not(.active) a:hover {
@@ -593,8 +593,8 @@
 .stat-icon {
     width: 50px;
     height: 50px;
-    background-color: rgba(166, 83, 62, 0.1);
-    /* Marron clair */
+    background-color: rgba(106, 90, 205, 0.1);
+    /* Bleu violet transparent */
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -604,8 +604,8 @@
 
 .stat-icon i {
     font-size: 1.25rem;
-    color: #A6533E;
-    /* Marron */
+    color: #6A5ACD;
+    /* Bleu violet */
 }
 
 .stat-info h3 {
@@ -695,10 +695,10 @@
 }
 
 .phase-status-badge.in-progress {
-    background-color: rgba(166, 83, 62, 0.1);
-    /* Marron clair */
-    color: #A6533E;
-    /* Marron */
+    background-color: rgba(106, 90, 205, 0.1);
+    /* Bleu violet clair */
+    color: #6A5ACD;
+    /* Bleu violet */
 }
 
 .phase-status-badge.upcoming {
@@ -1142,8 +1142,8 @@
 }
 
 .legend-color.jury-score {
-    background-color: #A6533E;
-    /* Marron */
+    background-color: #6A5ACD;
+    /* Bleu violet */
 }
 
 .legend-color.adjusted-score {
@@ -1224,8 +1224,8 @@
 }
 
 .score-fill.jury-score {
-    background-color: #A6533E;
-    /* Marron */
+    background-color: #6A5ACD;
+    /* Bleu violet */
 }
 
 .score-fill.adjusted-score {
@@ -1576,240 +1576,6 @@
     align-items: center;
 }
 
-.widget-content {
-    padding: 15px;
-}
-
-.evaluation-table.full-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.evaluation-table.full-table th,
-.evaluation-table.full-table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-.evaluation-table.full-table th {
-    background-color: #f5f5f5;
-    font-weight: bold;
-}
-
-.evaluation-table.full-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.mini-progress {
-    display: flex;
-    align-items: center;
-}
-
-.mini-fill {
-    height: 8px;
-    background-color: #007bff;
-    border-radius: 4px;
-    margin-right: 8px;
-}
-
-.statut {
-    padding: 5px 10px;
-    border-radius: 12px;
-    font-size: 0.9em;
-}
-
-.statut.soumis {
-    background-color: #e0f7fa;
-    color: #007bff;
-}
-
-.statut.incomplet {
-    background-color: #fff3e0;
-    color: #ff9800;
-}
-
-.statut.qualifie {
-    background-color: #e8f5e9;
-    color: #4caf50;
-}
-
-.btn {
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.9em;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: #6A5ACD;
-    color: #fff;
-    border: none;
-}
-
-.btn-success {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-}
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 800px;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.modal-header h2 {
-    margin: 0;
-}
-
-.btn-close {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-.evaluation-grid {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-.evaluation-grid th,
-.evaluation-grid td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.evaluation-grid th {
-    background-color: #f5f5f5;
-    font-weight: bold;
-}
-
-.evaluation-grid td:first-child {
-    text-align: left;
-}
-
-.modal-footer {
-    text-align: right;
-}
-
-.admin-content.full-page {
-    padding: 20px;
-    min-height: calc(100vh - 60px);
-    background-color: #f4f7fa;
-    font-family: 'Arial', sans-serif;
-}
-
-.page-title {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.page-title h1 {
-    margin: 0;
-    font-size: 2em;
-    color: #6A5ACD;
-}
-
-.page-title p {
-    margin: 5px 0 0;
-    color: #7f8c8d;
-}
-
-.dashboard-stats {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 15px;
-}
-
-.stat-card {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-}
-
-.stat-icon {
-    margin-right: 10px;
-    color: #A6533E;
-    /* Marron (remplace bleu #3498db) */
-}
-
-.stat-info h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #2c3e50;
-}
-
-.stat-number {
-    margin: 0;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #e74c3c;
-}
-
-.dashboard-content {
-    flex: 1;
-    width: 100%;
-}
-
-.widget.full-width {
-    width: 100%;
-    margin: 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.widget-header {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    background-color: #ecf0f1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px 8px 0 0;
-}
-
 .widget-header h3 {
     margin: 0;
     color: #2c3e50;
@@ -1817,7 +1583,6 @@
 
 .btn {
     padding: 8px 16px;
-    border: none;
     border-radius: 4px;
     text-decoration: none;
     font-size: 0.9em;
