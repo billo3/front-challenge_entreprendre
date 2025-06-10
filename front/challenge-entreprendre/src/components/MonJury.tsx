@@ -9,6 +9,15 @@ interface JuryMember {
     present: boolean;
 }
 
+const allPossibleMembers: JuryMember[] = [
+    { id: 1, name: 'Bachir Diop', role: 'Membre du jury', status: 'active', progress: 80, present: true },
+    { id: 2, name: 'Amadou LY', role: 'Membre du jury', status: 'active', progress: 65, present: true },
+    { id: 3, name: 'Babzo', role: 'Membre du jury', status: 'active', progress: 45, present: true },
+    { id: 4, name: 'El pepe', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
+    { id: 5, name: 'Fatou Ndiaye', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
+    { id: 6, name: 'Jean Dupont', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
+];
+
 const MonJury: React.FC = () => {
     const [juryMembers, setJuryMembers] = useState<JuryMember[]>([
         { id: 1, name: 'Bachir Diop', role: 'Membre du jury', status: 'active', progress: 80, present: true },
@@ -16,6 +25,7 @@ const MonJury: React.FC = () => {
         { id: 3, name: 'Babzo', role: 'Membre du jury', status: 'active', progress: 45, present: true },
         { id: 4, name: 'El pepe', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
     ]);
+    const [showAddList, setShowAddList] = useState(false);
 
     const togglePresence = (id: number) => {
         setJuryMembers(juryMembers.map((member) =>
@@ -27,6 +37,16 @@ const MonJury: React.FC = () => {
 
     const sendReminder = (name: string) => {
         alert(`Rappel envoyé à ${name}`);
+    };
+
+    // Membres qui ne sont pas encore dans le jury
+    const availableMembers = allPossibleMembers.filter(
+        m => !juryMembers.some(j => j.id === m.id)
+    );
+
+    const handleAddMember = (member: JuryMember) => {
+        setJuryMembers([...juryMembers, member]);
+        setShowAddList(false);
     };
 
     return (
@@ -54,7 +74,7 @@ const MonJury: React.FC = () => {
                 <div className="widget full-width jury-status">
                     <div className="widget-header">
                         <h3>Membres du Jury</h3>
-                        <button className="btn btn-primary">
+                        <button className="btn btn-primary" onClick={() => setShowAddList(true)}>
                             <i className="fas fa-plus"></i> Ajouter Membre
                         </button>
                     </div>
@@ -69,7 +89,6 @@ const MonJury: React.FC = () => {
                                     <div className="member-info">
                                         <h4>{member.name}</h4>
                                         <span className="member-role">{member.role}</span>
-
                                     </div>
                                     <div className="jury-actions">
                                         <button
@@ -88,6 +107,31 @@ const MonJury: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Modal ou liste pour ajouter un membre */}
+            {showAddList && (
+                <div className="modal-overlay" onClick={() => setShowAddList(false)}>
+                    <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: 400, margin: "10% auto", background: "#fff", borderRadius: 12, padding: 24 }}>
+                        <h4>Ajouter un membre au jury</h4>
+                        {availableMembers.length === 0 ? (
+                            <p>Aucun membre disponible à ajouter.</p>
+                        ) : (
+                            <ul style={{ listStyle: "none", padding: 0 }}>
+                                {availableMembers.map(member => (
+                                    <li key={member.id} style={{ marginBottom: 12 }}>
+                                        <button className="btn btn-outline" style={{ width: "100%" }} onClick={() => handleAddMember(member)}>
+                                            <i className="fas fa-user-plus"></i> {member.name}
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                        <button className="btn btn-secondary" style={{ marginTop: 16 }} onClick={() => setShowAddList(false)}>
+                            Annuler
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

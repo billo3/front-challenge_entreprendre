@@ -110,6 +110,9 @@ const Evaluations: React.FC = () => {
         }
     };
 
+    const [search, setSearch] = useState('');
+    const [statusFilter, setStatusFilter] = useState('all');
+
     const calculateTotal = (): number => {
         const projectScores = scores[selectedProject?.id || 0] || {};
         return Object.values(projectScores).reduce((sum, score) => sum + score, 0);
@@ -128,6 +131,17 @@ const Evaluations: React.FC = () => {
         { id: 10, name: 'Appréciation globale du projet', description: 'Sentiment favorable généré par le projet.' },
     ];
 
+    const filteredEvaluations = evaluations.filter((evalItem) => {
+        // Filtre par recherche
+        const matchesSearch = evalItem.projectName.toLowerCase().includes(search.toLowerCase());
+        // Filtre par statut
+        let matchesStatus = true;
+        if (statusFilter === 'completed') matchesStatus = evalItem.status === 'Complétée';
+        else if (statusFilter === 'in-progress') matchesStatus = evalItem.status === 'En cours';
+        else if (statusFilter === 'todo') matchesStatus = evalItem.status === 'À faire';
+        return matchesSearch && matchesStatus;
+    });
+
     return (
         <div className="evaluations-page">
             <div className="page-title">
@@ -138,10 +152,15 @@ const Evaluations: React.FC = () => {
             <div className="evaluation-controls">
                 <div className="search-bar">
                     <i className="fas fa-search"></i>
-                    <input type="text" placeholder="Rechercher un projet..." />
+                    <input type="text" placeholder="Rechercher un projet..."
+                        value={search}
+                        onChange={e => setSearch(e.target.value)}
+                    />
                 </div>
                 <div className="filter-options">
-                    <select>
+                    <select value={statusFilter}
+                        onChange={e => setStatusFilter(e.target.value)}
+                    >
                         <option value="all">Tous les statuts</option>
                         <option value="completed">Complétée</option>
                         <option value="in-progress">En cours</option>
@@ -166,7 +185,7 @@ const Evaluations: React.FC = () => {
                                 <span>Progression</span>
                                 <span>Actions</span>
                             </div>
-                            {evaluations.map((evalItem) => (
+                            {filteredEvaluations.map((evalItem) => (
                                 <div className="table-row" key={evalItem.id}>
                                     <span>{evalItem.projectName}</span>
                                     <span className={`status ${evalItem.status.toLowerCase().replace(' ', '-')}`}>
