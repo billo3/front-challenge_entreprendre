@@ -80,13 +80,18 @@ const Classement: React.FC = () => {
                 type="number"
                 min={1}
                 max={projects.length}
-                value={qualifiedCount}
+                value={qualifiedCount === 0 ? "" : qualifiedCount}
                 onChange={(e) => {
                   if (isValidated) {
                     alert('La sélection est validée, le nombre de projets qualifiés ne peut plus être modifié.');
                     return;
                   }
-                  let count = parseInt(e.target.value, 10);
+                  const value = e.target.value;
+                  if (value === "") {
+                    setQualifiedCount(0);
+                    return;
+                  }
+                  let count = parseInt(value, 10);
                   if (isNaN(count) || count < 1) count = 1;
                   if (count > projects.length) count = projects.length;
                   setQualifiedCount(count);

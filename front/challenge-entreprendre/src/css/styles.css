@@ -1,15 +1,15 @@
 /* Base Styles and Variables */
 :root {
-    --primary-color: #A6533E; /* Marron (remplace bleu #2563eb) */
-    --primary-light: #B86B5A; /* Marron clair */
-    --primary-dark: #8F3F2C; /* Marron foncé (remplace #1d4ed8) */
-    --secondary-color: #A4B0B6; /* Gris métallique (remplace jaune #f59e0b) */
-    --secondary-light: #B0B8C0; /* Gris métallique clair */
-    --secondary-dark: #8F9BA3; /* Gris métallique foncé (remplace #d97706) */
-    --success-color: #6A5ACD; /* Bleu violet (remplace vert #10b981) */
+    --primary-color: #F97316; /* Orange remplace marron */
+    --primary-light: #FBBF24; /* Orange clair */
+    --primary-dark: #EA580C; /* Orange foncé remplace marron foncé */
+    --secondary-color: rgba(16, 185, 129, 0.05); /* Bleu-vert transparent remplace gris métallique */
+    --secondary-light: rgba(16, 185, 129, 0.1); /* Bleu-vert transparent clair */
+    --secondary-dark: rgba(16, 185, 129, 0.2); /* Bleu-vert transparent foncé remplace gris métallique foncé */
+    --success-color: #60A5FA; /* Bleu clair remplace bleu violet */
     --danger-color: #ef4444;
-    --warning-color: #A4B0B6; /* Gris métallique (remplace #f59e0b) */
-    --info-color: #6A5ACD; /* Bleu violet (remplace #3b82f6) */
+    --warning-color: rgba(16, 185, 129, 0.05); /* Bleu-vert transparent remplace gris métallique */
+    --info-color: #60A5FA; /* Bleu clair remplace bleu violet */
     
     --text-primary: #1e293b;
     --text-secondary: #475569;
@@ -182,12 +182,12 @@ p {
 
 .btn-secondary {
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--text-primary);
 }
 
 .btn-secondary:hover {
     background-color: var(--secondary-dark);
-    color: white;
+    color: var(--text-primary);
 }
 
 .btn-outline {
@@ -773,7 +773,7 @@ textarea:focus,
 select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(166, 83, 62, 0.25); /* Ajusté pour marron */
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25); /* Ajusté pour orange */
 }
 
 textarea {
@@ -951,6 +951,7 @@ textarea {
 .login-info a {
     font-weight: 500;
 }
+
 .project-details,
 .evaluation-details {
     margin-bottom: 20px;
@@ -980,7 +981,8 @@ textarea {
 }
 
 .evaluation-details th {
-    background: #f5f5f5;
+    background: rgba(16, 185, 129, 0.05); /* Bleu-vert transparent remplace gris */
+    color: var(--text-primary);
     font-weight: 600;
 }
 
