@@ -1,15 +1,15 @@
 /* Base Styles and Variables */
 :root {
-    --primary-color: #2563eb;
-    --primary-light: #3b82f6;
-    --primary-dark: #1d4ed8;
-    --secondary-color: #f59e0b;
-    --secondary-light: #fbbf24;
-    --secondary-dark: #d97706;
-    --success-color: #10b981;
+    --primary-color: #F97316; /* Orange remplace marron */
+    --primary-light: #FBBF24; /* Orange clair */
+    --primary-dark: #EA580C; /* Orange foncé remplace marron foncé */
+    --secondary-color: rgba(16, 185, 129, 0.05); /* Bleu-vert transparent remplace gris métallique */
+    --secondary-light: rgba(16, 185, 129, 0.1); /* Bleu-vert transparent clair */
+    --secondary-dark: rgba(16, 185, 129, 0.2); /* Bleu-vert transparent foncé remplace gris métallique foncé */
+    --success-color: #60A5FA; /* Bleu clair remplace bleu violet */
     --danger-color: #ef4444;
-    --warning-color: #f59e0b;
-    --info-color: #3b82f6;
+    --warning-color: rgba(16, 185, 129, 0.05); /* Bleu-vert transparent remplace gris métallique */
+    --info-color: #60A5FA; /* Bleu clair remplace bleu violet */
     
     --text-primary: #1e293b;
     --text-secondary: #475569;
@@ -182,12 +182,12 @@ p {
 
 .btn-secondary {
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--text-primary);
 }
 
 .btn-secondary:hover {
     background-color: var(--secondary-dark);
-    color: white;
+    color: var(--text-primary);
 }
 
 .btn-outline {
@@ -773,7 +773,7 @@ textarea:focus,
 select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25); /* Ajusté pour orange */
 }
 
 textarea {
@@ -950,4 +950,42 @@ textarea {
 
 .login-info a {
     font-weight: 500;
+}
+
+.project-details,
+.evaluation-details {
+    margin-bottom: 20px;
+}
+
+.project-details h3,
+.evaluation-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.evaluation-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.evaluation-details th,
+.evaluation-details td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.evaluation-details th {
+    background: rgba(16, 185, 129, 0.05); /* Bleu-vert transparent remplace gris */
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.total-row {
+    font-weight: bold;
 }

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import StatCard from './StatCard';
-import EvaluationProgress from './EvaluationProgress';
 import JuryStatus from './JuryStatus';
-import ProjectScoring from './ProjectScoring';
+import ProjectScoring from '../pages/ProjectScoring';
 import ActionItems from './ActionItems';
 
-function PresidentJury() {
+const PresidentJury: React.FC = () => {
     return (
         <>
             <div className="page-title">
@@ -22,13 +21,13 @@ function PresidentJury() {
             </div>
 
             <div className="dashboard-widgets">
-                <EvaluationProgress />
                 <JuryStatus />
+                <ActionItems />
+
             </div>
 
             <div className="dashboard-widgets">
                 <ProjectScoring />
-                <ActionItems />
             </div>
 
             <div className="dashboard-actions">
@@ -36,7 +35,7 @@ function PresidentJury() {
                     <i className="fas fa-table"></i> Consulter Évaluations Consolidées
                 </Link>
                 <Link to="/projets-a-evaluer" className="btn btn-primary">
-                    <i className="fas fa-clipboard-check"></i> Ajuster Scores
+                    <i className="fas fa-clipboard-check"></i> Evaluer mes projets
                 </Link>
                 <Link to="/mon-jury" className="btn btn-primary">
                     <i className="fas fa-users"></i> Gérer Présence Jury
@@ -47,6 +46,6 @@ function PresidentJury() {
             </div>
         </>
     );
-}
+};
 
 export default PresidentJury;

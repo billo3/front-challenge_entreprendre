@@ -1,6 +1,12 @@
 import React from 'react';
 
-function StatCard({ icon, title, value }) {
+interface StatCardProps {
+    icon: string;
+    title: string;
+    value: string | number;
+}
+
+const StatCard: React.FC<StatCardProps> = ({ icon, title, value }) => {
     return (
         <div className="stat-card">
             <div className="stat-icon">
@@ -12,6 +18,6 @@ function StatCard({ icon, title, value }) {
             </div>
         </div>
     );
-}
+};
 
 export default StatCard;

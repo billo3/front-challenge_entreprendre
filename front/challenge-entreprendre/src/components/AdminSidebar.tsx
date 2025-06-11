@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function AdminSidebar() {
+const AdminSidebar: React.FC = () => {
   return (
     <aside className="admin-sidebar">
       <div className="sidebar-header">
@@ -19,7 +19,7 @@ function AdminSidebar() {
           <i className="fas fa-gavel"></i>
         </div>
         <div className="profile-info">
-          <h3>Pierre Martin</h3>
+          <h3>Amadou </h3>
           <span className="role">Président du Jury</span>
         </div>
       </div>
@@ -66,6 +66,6 @@ function AdminSidebar() {
       </div>
     </aside>
   );
-}
+};
 
 export default AdminSidebar;
