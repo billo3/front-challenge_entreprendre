@@ -5,25 +5,24 @@ interface JuryMember {
     name: string;
     role: string;
     status: 'active' | 'inactive';
-    progress: number;
     present: boolean;
 }
 
 const allPossibleMembers: JuryMember[] = [
-    { id: 1, name: 'Bachir Diop', role: 'Membre du jury', status: 'active', progress: 80, present: true },
-    { id: 2, name: 'Amadou LY', role: 'Membre du jury', status: 'active', progress: 65, present: true },
-    { id: 3, name: 'Babzo', role: 'Membre du jury', status: 'active', progress: 45, present: true },
-    { id: 4, name: 'El pepe', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
-    { id: 5, name: 'Fatou Ndiaye', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
-    { id: 6, name: 'Jean Dupont', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
+    { id: 1, name: 'Bachir Diop', role: 'Membre du jury', status: 'active', present: true },
+    { id: 2, name: 'Amadou LY', role: 'Membre du jury', status: 'active', present: true },
+    { id: 3, name: 'Babzo', role: 'Membre du jury', status: 'active', present: true },
+    { id: 4, name: 'El pepe', role: 'Membre du jury', status: 'inactive', present: false },
+    { id: 5, name: 'Fatou Ndiaye', role: 'Membre du jury', status: 'inactive', present: false },
+    { id: 6, name: 'Jean Dupont', role: 'Membre du jury', status: 'inactive', present: false },
 ];
 
 const MonJury: React.FC = () => {
     const [juryMembers, setJuryMembers] = useState<JuryMember[]>([
-        { id: 1, name: 'Bachir Diop', role: 'Membre du jury', status: 'active', progress: 80, present: true },
-        { id: 2, name: 'Amadou LY', role: 'Membre du jury', status: 'active', progress: 65, present: true },
-        { id: 3, name: 'Babzo', role: 'Membre du jury', status: 'active', progress: 45, present: true },
-        { id: 4, name: 'El pepe', role: 'Membre du jury', status: 'inactive', progress: 0, present: false },
+        { id: 1, name: 'Bachir Diop', role: 'Membre du jury', status: 'active', present: true },
+        { id: 2, name: 'Amadou LY', role: 'Membre du jury', status: 'active', present: true },
+        { id: 3, name: 'Babzo', role: 'Membre du jury', status: 'active', present: true },
+        { id: 4, name: 'El pepe', role: 'Membre du jury', status: 'inactive', present: false },
     ]);
     const [showAddList, setShowAddList] = useState(false);
 

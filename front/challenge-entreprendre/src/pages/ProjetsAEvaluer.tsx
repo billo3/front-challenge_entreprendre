@@ -6,16 +6,15 @@ interface Project {
     name: string;
     description: string;
     deadline: string;
-    progress: number;
     adjustedScore: string | number;
     statut?: 'Soumis' | 'Incomplet' | 'Qualifié Phase 1';
 }
 
 const ProjetsAEvaluer: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([
-        { id: 1, name: 'EcoDrive', description: 'Covoiturage écologique', deadline: '12 juin 2025', progress: 50, adjustedScore: '', statut: 'Soumis' },
-        { id: 2, name: 'MediConnect', description: 'Télémédecine', deadline: '15 juin 2025', progress: 30, adjustedScore: '', statut: 'Incomplet' },
-        { id: 3, name: 'SmartFarming', description: 'Agriculture IoT', deadline: '10 juin 2025', progress: 70, adjustedScore: '', statut: 'Qualifié Phase 1' },
+        { id: 1, name: 'EcoDrive', description: 'Covoiturage écologique', deadline: '12 juin 2025', adjustedScore: '', statut: 'Soumis' },
+        { id: 2, name: 'MediConnect', description: 'Télémédecine', deadline: '15 juin 2025', adjustedScore: '', statut: 'Incomplet' },
+        { id: 3, name: 'SmartFarming', description: 'Agriculture IoT', deadline: '10 juin 2025', adjustedScore: '', statut: 'Qualifié Phase 1' },
     ]);
 
     const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -26,21 +25,6 @@ const ProjetsAEvaluer: React.FC = () => {
         2: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0 },
         3: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0 },
     });
-
-    const handleScoreChange = (id: number, value: string) => {
-        setProjects(projects.map((project) =>
-            project.id === id ? { ...project, adjustedScore: value } : project
-        ));
-    };
-
-    const saveScore = (id: number) => {
-        const project = projects.find((p) => p.id === id);
-        if (project && project.adjustedScore && !isNaN(Number(project.adjustedScore)) && Number(project.adjustedScore) >= 0 && Number(project.adjustedScore) <= 10) {
-            alert(`Score ajusté de ${project.adjustedScore} sauvegardé pour ${project.name}`);
-        } else {
-            alert('Veuillez entrer un score valide entre 0 et 10');
-        }
-    };
 
     const handleEvaluer = (id: number) => {
         setSelectedProject(id);
@@ -103,9 +87,7 @@ const ProjetsAEvaluer: React.FC = () => {
                 <div className="widget full-width">
                     <div className="widget-header">
                         <h3>Liste des Projets</h3>
-                        {/* <Link to="/evaluations-consolidees" className="btn btn-primary">
-                            <i className="fas fa-table"></i> Voir Évaluations Consolidées
-                        </Link> */}
+
                     </div>
                     <div className="widget-content">
                         <table className="evaluation-table full-table">
@@ -114,7 +96,6 @@ const ProjetsAEvaluer: React.FC = () => {
                                     <th>Projet</th>
                                     <th>Description</th>
                                     <th>Date limite</th>
-                                    <th>Progression</th>
                                     <th>Statut</th>
                                     <th>Actions</th>
                                 </tr>
@@ -125,12 +106,7 @@ const ProjetsAEvaluer: React.FC = () => {
                                         <td>{project.name}</td>
                                         <td>{project.description}</td>
                                         <td>{project.deadline}</td>
-                                        <td>
-                                            <div className="mini-progress">
-                                                <div className="mini-fill" style={{ width: `${project.progress}%` }}></div>
-                                                <span>{project.progress}%</span>
-                                            </div>
-                                        </td>
+
                                         <td>
                                             <span className={getStatutClass(project.statut || '')}>
                                                 {project.statut}

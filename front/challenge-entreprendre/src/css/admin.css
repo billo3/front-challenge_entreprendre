@@ -280,20 +280,6 @@
     cursor: not-allowed;
 }
 
-.mini-progress {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.mini-fill {
-    height: 6px;
-    background: #6A5ACD;
-    /* Bleu violet */
-    border-radius: 3px;
-    transition: width 0.3s ease;
-}
-
 /* Admin Dashboard Styles */
 
 /* Admin Layout */
@@ -974,33 +960,6 @@
     margin-bottom: 1.5rem;
 }
 
-.chart-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-}
-
-.chart-label span {
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 12px;
-    background-color: #e2e8f0;
-    border-radius: 50px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background-color: #A6533E;
-    /* Marron remplace var(--primary-color) */
-    border-radius: 50px;
-}
-
 .chart-details {
     margin-top: 1.25rem;
 }
@@ -1016,34 +975,6 @@
     margin-bottom: 0;
 }
 
-.chart-label {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-.mini-progress {
-    width: 100px;
-    height: 6px;
-    background-color: #e2e8f0;
-    border-radius: 50px;
-    overflow: hidden;
-    position: relative;
-}
-
-.mini-fill {
-    height: 100%;
-    background-color: #A6533E;
-    /* Marron */
-    border-radius: 50px;
-}
-
-.mini-progress span {
-    position: absolute;
-    right: -25px;
-    top: -7px;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-}
 
 .progress-summary {
     font-size: 0.9rem;
@@ -1113,11 +1044,6 @@
     color: var(--text-tertiary);
     margin-bottom: 0.5rem;
     display: block;
-}
-
-.member-progress .mini-progress {
-    width: 100%;
-    max-width: 200px;
 }
 
 /* Project Scoring */
@@ -1649,19 +1575,6 @@
     background-color: #f9fbfd;
 }
 
-.mini-progress {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.mini-fill {
-    height: 8px;
-    background: linear-gradient(to right, #A6533E, #6A5ACD);
-    /* Marron à bleu violet (remplace bleu à vert) */
-    border-radius: 4px;
-    flex: 1;
-}
 
 .statut {
     padding: 5px 10px;

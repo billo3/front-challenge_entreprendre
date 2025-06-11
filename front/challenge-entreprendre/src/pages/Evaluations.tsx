@@ -182,7 +182,7 @@ const Evaluations: React.FC = () => {
                                 <span>Statut</span>
                                 <span>Score</span>
                                 <span>Date Limite</span>
-                                <span>Progression</span>
+                                {/* <span>Progression</span> */}
                                 <span>Actions</span>
                             </div>
                             {filteredEvaluations.map((evalItem) => (
@@ -193,12 +193,12 @@ const Evaluations: React.FC = () => {
                                     </span>
                                     <span>{evalItem.score ? evalItem.score.toFixed(1) : '-'}</span>
                                     <span>{evalItem.deadline}</span>
-                                    <span>
+                                    {/* <span>
                                         <div className="mini-progress">
                                             <div className="mini-fill" style={{ width: `${evalItem.progress}%` }}></div>
                                             <span>{evalItem.progress}%</span>
                                         </div>
-                                    </span>
+                                    </span> */}
                                     <span className="actions">
                                         <button
                                             className="btn btn-sm btn-outline"

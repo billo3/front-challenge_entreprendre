@@ -28,18 +28,18 @@ const Classement: React.FC = () => {
     ));
   };
 
-  const handleQualifiedCountChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if (isValidated) {
-      alert('La sélection est validée, le nombre de projets qualifiés ne peut plus être modifié.');
-      return;
-    }
-    const count = parseInt(e.target.value);
-    setQualifiedCount(count);
-    setProjects(projects.map((project, index) => ({
-      ...project,
-      qualified: index < count,
-    })));
-  };
+  // const handleQualifiedCountChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   if (isValidated) {
+  //     alert('La sélection est validée, le nombre de projets qualifiés ne peut plus être modifié.');
+  //     return;
+  //   }
+  //   const count = parseInt(e.target.value);
+  //   setQualifiedCount(count);
+  //   setProjects(projects.map((project, index) => ({
+  //     ...project,
+  //     qualified: index < count,
+  //   })));
+  // };
 
   const validateSelection = () => {
     const invalidScores = projects.some((p) => !p.adjustedScore || (typeof p.adjustedScore === 'number' && (p.adjustedScore < 0 || p.adjustedScore > 10)));

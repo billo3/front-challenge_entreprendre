@@ -24,7 +24,7 @@ const JuryStatus: React.FC = () => {
                             <span className="status-dot active"></span>
                         </div>
                         <div className="member-info">
-                            <h4>Sophie Leclerc</h4>
+                            <h4>Baye KA</h4>
                             <span className="member-role">Membre du jury</span>
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const JuryStatus: React.FC = () => {
                             <span className="status-dot active"></span>
                         </div>
                         <div className="member-info">
-                            <h4>Robert Durand</h4>
+                            <h4>Sokhna Sall</h4>
                             <span className="member-role">Membre du jury</span>
 
                         </div>
@@ -47,7 +47,7 @@ const JuryStatus: React.FC = () => {
                             <span className="status-dot active"></span>
                         </div>
                         <div className="member-info">
-                            <h4>Nathalie Moreau</h4>
+                            <h4>Cheikh Thiaw</h4>
                             <span className="member-role">Membre du jury</span>
 
                         </div>
@@ -59,7 +59,7 @@ const JuryStatus: React.FC = () => {
                             <span className="status-dot inactive"></span>
                         </div>
                         <div className="member-info">
-                            <h4>Paul Lefevre</h4>
+                            <h4>Ibrahima Fall</h4>
                             <span className="member-role">Membre du jury</span>
 
                         </div>
