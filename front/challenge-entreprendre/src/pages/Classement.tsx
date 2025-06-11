@@ -6,17 +6,52 @@ interface Project {
   juryScore: number;
   adjustedScore: number | string;
   qualified: boolean;
+  description?: string;
+  details?: string;
 }
 
 const Classement: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([
-    { id: 1, name: 'EcoDrive', juryScore: 8.5, adjustedScore: 8.8, qualified: true },
-    { id: 2, name: 'MediConnect', juryScore: 8.2, adjustedScore: 8.5, qualified: true },
-    { id: 3, name: 'SmartFarming', juryScore: 7.9, adjustedScore: 8.0, qualified: true },
-    { id: 4, name: 'UrbanGreen', juryScore: 7.6, adjustedScore: 7.6, qualified: false },
+    {
+      id: 1,
+      name: 'EcoDrive',
+      juryScore: 8.5,
+      adjustedScore: 8.8,
+      qualified: true,
+      description: 'Application pour promouvoir la conduite écologique',
+      details: 'Réduit la consommation de carburant grâce à l\'IA'
+    },
+    {
+      id: 2,
+      name: 'MediConnect',
+      juryScore: 8.2,
+      adjustedScore: 8.5,
+      qualified: true,
+      description: 'Plateforme de télémédecine',
+      details: 'Connecte patients et médecins en temps réel'
+    },
+    {
+      id: 3,
+      name: 'SmartFarming',
+      juryScore: 7.9,
+      adjustedScore: 8.0,
+      qualified: true,
+      description: 'Solution IoT pour l\'agriculture',
+      details: 'Optimisation des ressources agricoles'
+    },
+    {
+      id: 4,
+      name: 'UrbanGreen',
+      juryScore: 7.6,
+      adjustedScore: 7.6,
+      qualified: false,
+      description: 'Projet d\'espaces verts urbains',
+      details: 'Amélioration de la qualité de l\'air en ville'
+    },
   ]);
   const [qualifiedCount, setQualifiedCount] = useState<number>(3);
   const [isValidated, setIsValidated] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const handleScoreChange = (id: number, value: string) => {
     if (isValidated) {
@@ -28,18 +63,13 @@ const Classement: React.FC = () => {
     ));
   };
 
-  // const handleQualifiedCountChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  //   if (isValidated) {
-  //     alert('La sélection est validée, le nombre de projets qualifiés ne peut plus être modifié.');
-  //     return;
-  //   }
-  //   const count = parseInt(e.target.value);
-  //   setQualifiedCount(count);
-  //   setProjects(projects.map((project, index) => ({
-  //     ...project,
-  //     qualified: index < count,
-  //   })));
-  // };
+  const handleViewProject = (project: Project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
 
   const validateSelection = () => {
     const invalidScores = projects.some((p) => !p.adjustedScore || (typeof p.adjustedScore === 'number' && (p.adjustedScore < 0 || p.adjustedScore > 10)));
@@ -110,15 +140,15 @@ const Classement: React.FC = () => {
             <div className="scoring-legend">
               <div className="legend-item">
                 <span className="legend-color jury-score"></span>
-                <span>Score Jury</span>
+                <span>Qualifié</span>
               </div>
               <div className="legend-item">
                 <span className="legend-color adjusted-score"></span>
-                <span>Score Ajusté</span>
+                <span>Score Jury</span>
               </div>
               <div className="legend-item">
                 <span className="legend-color qualify"></span>
-                <span>Qualifié</span>
+                <span>Score Ajusté</span>
               </div>
             </div>
 
@@ -148,13 +178,33 @@ const Classement: React.FC = () => {
                     </div>
                   </div>
                   <div className="project-actions">
-                    <button className="btn btn-sm btn-outline" disabled={isValidated}>
+                    <button
+                      className="btn btn-sm btn-outline"
+                      onClick={() => handleViewProject(project)}
+                      disabled={isValidated}
+                    >
                       <i className="fas fa-eye"></i> Voir
                     </button>
                   </div>
                 </div>
               ))}
             </div>
+
+            {selectedProject && (
+              <div className="modal-overlay">
+                <div className="modal-content">
+                  <h2>{selectedProject.name}</h2>
+                  <p><strong>Score Jury:</strong> {selectedProject.juryScore}</p>
+                  <p><strong>Score Ajusté:</strong> {selectedProject.adjustedScore}</p>
+                  <p><strong>Statut:</strong> {selectedProject.qualified ? 'Qualifié' : 'Non qualifié'}</p>
+                  <p><strong>Description:</strong> {selectedProject.description}</p>
+                  <p><strong>Détails:</strong> {selectedProject.details}</p>
+                  <button className="btn btn-primary" onClick={closeModal}>
+                    Fermer
+                  </button>
+                </div>
+              </div>
+            )}
 
             <div className="qualification-actions">
               <button className="btn btn-primary" onClick={validateSelection} disabled={isValidated}>
