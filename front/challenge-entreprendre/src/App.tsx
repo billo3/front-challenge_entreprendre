@@ -4,7 +4,7 @@ import AdminSidebar from './components/AdminSidebar';
 import AdminTopbar from './components/AdminTopbar';
 import PresidentJury from './components/MembreJury';
 import Evaluations from './pages/Evaluations';
-import ProjetsAEvaluer from './pages/ProjetsAEvaluer';
+
 
 
 const App: React.FC = () => {
@@ -18,8 +18,6 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<PresidentJury />} />
               <Route path="/evaluations" element={<Evaluations />} />
-              
-              <Route path="/projets-a-evaluer" element={<ProjetsAEvaluer />} />
               
               <Route path="/mon-profil" element={<div><h1>Mon Profil</h1><p>À venir...</p></div>} />
               <Route path="/index" element={<div><h1>Site Public</h1><p>À venir...</p></div>} />
