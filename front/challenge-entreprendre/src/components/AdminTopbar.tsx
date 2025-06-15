@@ -16,17 +16,13 @@ const AdminTopbar: React.FC = () => {
       </div>
 
       <div className="topbar-actions">
-        <div className="topbar-notification">
-          <i className="fas fa-bell"></i>
-          <span className="notification-badge">2</span>
-        </div>
-
+      
         <div
           className="topbar-profile"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
           <i className="fas fa-user-circle"></i>
-          <span>Billo the GOAT</span>
+          <span>Sokhna</span>
           <i className="fas fa-chevron-down"></i>
           {isDropdownOpen && (
             <div className="profile-dropdown">

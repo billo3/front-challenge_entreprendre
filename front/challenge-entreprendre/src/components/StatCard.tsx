@@ -3,7 +3,7 @@ import React from 'react';
 interface StatCardProps {
     icon: string;
     title: string;
-    value: string | number;
+    value: string;
 }
 
 const StatCard: React.FC<StatCardProps> = ({ icon, title, value }) => {
@@ -14,7 +14,7 @@ const StatCard: React.FC<StatCardProps> = ({ icon, title, value }) => {
             </div>
             <div className="stat-info">
                 <h3>{title}</h3>
-                <p className="stat-number">{value}</p>
+                <p>{value}</p>
             </div>
         </div>
     );
