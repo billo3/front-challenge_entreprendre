@@ -19,8 +19,8 @@ const AdminSidebar: React.FC = () => {
           <i className="fas fa-gavel"></i>
         </div>
         <div className="profile-info">
-          <h3>Amadou </h3>
-          <span className="role">Président du Jury</span>
+          <h3>Sokhna </h3>
+          <span className="role">Membre du Jury</span>
         </div>
       </div>
 
