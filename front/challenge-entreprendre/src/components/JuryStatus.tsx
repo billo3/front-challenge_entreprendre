@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function JuryStatus() {
+const JuryStatus: React.FC = () => {
     const navigate = useNavigate();
 
     const handleMarquerPresences = () => {
-        navigate('/mon-jury'); // Redirection vers la page mon jury
+        navigate('/mon-jury');
     };
 
     return (
@@ -24,14 +24,8 @@ function JuryStatus() {
                             <span className="status-dot active"></span>
                         </div>
                         <div className="member-info">
-                            <h4>Sophie Leclerc</h4>
+                            <h4>Baye KA</h4>
                             <span className="member-role">Membre du jury</span>
-                            <div className="member-progress">
-                                <div className="mini-progress">
-                                    <div className="mini-fill" style={{ width: '80%' }}></div>
-                                    <span>80%</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -41,14 +35,9 @@ function JuryStatus() {
                             <span className="status-dot active"></span>
                         </div>
                         <div className="member-info">
-                            <h4>Robert Durand</h4>
+                            <h4>Sokhna Sall</h4>
                             <span className="member-role">Membre du jury</span>
-                            <div className="member-progress">
-                                <div className="mini-progress">
-                                    <div className="mini-fill" style={{ width: '65%' }}></div>
-                                    <span>65%</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
@@ -58,14 +47,9 @@ function JuryStatus() {
                             <span className="status-dot active"></span>
                         </div>
                         <div className="member-info">
-                            <h4>Nathalie Moreau</h4>
+                            <h4>Cheikh Thiaw</h4>
                             <span className="member-role">Membre du jury</span>
-                            <div className="member-progress">
-                                <div className="mini-progress">
-                                    <div className="mini-fill" style={{ width: '45%' }}></div>
-                                    <span>45%</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
@@ -75,14 +59,9 @@ function JuryStatus() {
                             <span className="status-dot inactive"></span>
                         </div>
                         <div className="member-info">
-                            <h4>Paul Lefevre</h4>
+                            <h4>Ibrahima Fall</h4>
                             <span className="member-role">Membre du jury</span>
-                            <div className="member-progress">
-                                <div className="mini-progress">
-                                    <div className="mini-fill" style={{ width: '0%' }}></div>
-                                    <span>0%</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -92,12 +71,12 @@ function JuryStatus() {
                         <i className="fas fa-envelope"></i> Rappel Collectif
                     </button>
                     <button className="btn btn-sm btn-primary" onClick={handleMarquerPresences}>
-                        <i className="fas fa-user-check"> </i> Marquer Présences
+                        <i className="fas fa-user-check"></i> Marquer Présences
                     </button>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default JuryStatus;

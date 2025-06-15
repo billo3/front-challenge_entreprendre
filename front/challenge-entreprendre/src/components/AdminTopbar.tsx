@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function AdminTopbar() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const AdminTopbar: React.FC = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   return (
     <div className="admin-topbar">
@@ -21,7 +21,10 @@ function AdminTopbar() {
           <span className="notification-badge">2</span>
         </div>
 
-        <div className="topbar-profile" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+        <div
+          className="topbar-profile"
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        >
           <i className="fas fa-user-circle"></i>
           <span>Billo the GOAT</span>
           <i className="fas fa-chevron-down"></i>
@@ -39,6 +42,6 @@ function AdminTopbar() {
       </div>
     </div>
   );
-}
+};
 
 export default AdminTopbar;

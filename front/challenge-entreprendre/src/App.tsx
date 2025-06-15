@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminSidebar from './components/AdminSidebar';
 import AdminTopbar from './components/AdminTopbar';
 import PresidentJury from './components/PresidentJury';
-import Evaluations from './components/Evaluations';
-import ProjetsAEvaluer from './components/ProjetsAEvaluer';
+import Evaluations from './pages/Evaluations';
+import ProjetsAEvaluer from './pages/ProjetsAEvaluer';
 import MonJury from './components/MonJury';
-import Classement from './components/Classement';
-import ConsolidatedEvaluations from './components/ConsolidatedEvaluations';
+import Classement from './pages/Classement';
+import ConsolidatedEvaluations from './pages/ConsolidatedEvaluations';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <div className="admin-container">
@@ -33,6 +33,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

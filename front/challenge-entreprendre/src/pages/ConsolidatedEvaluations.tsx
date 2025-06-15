@@ -1,7 +1,13 @@
 import React from 'react';
 
-function ConsolidatedEvaluations() {
-  const projects = [
+interface ConsolidatedProject {
+  id: number;
+  name: string;
+  scores: { [key: string]: number };
+}
+
+const ConsolidatedEvaluations: React.FC = () => {
+  const projects: ConsolidatedProject[] = [
     {
       id: 1,
       name: 'EcoDrive',
@@ -19,7 +25,7 @@ function ConsolidatedEvaluations() {
     },
   ];
 
-  const calculateAverage = (scores) => {
+  const calculateAverage = (scores: { [key: string]: number }): string => {
     const values = Object.values(scores);
     return (values.reduce((sum, score) => sum + score, 0) / values.length).toFixed(1);
   };
@@ -64,6 +70,6 @@ function ConsolidatedEvaluations() {
       </div>
     </div>
   );
-}
+};
 
 export default ConsolidatedEvaluations;
