@@ -90,66 +90,8 @@ const MembreJury: React.FC = () => {
       <div className="dashboard-stats">
         <StatCard icon="fas fa-tasks" title="Projets à Évaluer" value="10" />
         <StatCard icon="fas fa-check-circle" title="Évaluations Complétées" value="8" />
-        <StatCard icon="fas fa-clock" title="Jours Restants" value="5" />
-        <StatCard icon="fas fa-chart-line" title="Progression" value="80%" />
       </div>
 
-      <div className="dashboard-widgets">
-        <div className="widget evaluation-progress">
-          <div className="widget-header">
-            <h3>Mes Évaluations</h3>
-            <Link to="/evaluations" className="widget-action">
-              Voir tout <i className="fas fa-arrow-right"></i>
-            </Link>
-          </div>
-          <div className="widget-content">
-            <div className="progress-chart">
-              <div className="chart-label">
-                <span>Progression des évaluations</span>
-                <span>80%</span>
-              </div>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: '80%' }}></div>
-              </div>
-              <div className="progress-summary">
-                <p>8 évaluations complétées sur 10 projets</p>
-                <p className="deadline">Date limite: <strong>15 juin 2025</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="widget next-evaluations">
-          <div className="widget-header">
-            <h3>Projets à Évaluer</h3>
-            <Link to="/projets-a-evaluer" className="widget-action">
-              Voir tout <i className="fas fa-arrow-right"></i>
-            </Link>
-          </div>
-          <div className="widget-content">
-            <ul className="project-list">
-              {projects.map((project) => (
-                <li key={project.id} className="project-item">
-                  <div className="project-info">
-                    <h4>{project.name}</h4>
-                    <p>{project.description}</p>
-                    <div className="project-meta">
-                      <span className="category">
-                        <i className="fas fa-tag"></i> {project.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="project-actions">
-                    <button className="btn btn-primary btn-sm" onClick={() => openModal(project)}>
-                      Évaluer
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
 
       <div className="dashboard-widgets">
         <div className="widget recent-evaluations">

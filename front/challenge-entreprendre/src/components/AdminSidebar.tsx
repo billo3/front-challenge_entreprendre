@@ -19,8 +19,8 @@ const AdminSidebar: React.FC = () => {
           <i className="fas fa-gavel"></i>
         </div>
         <div className="profile-info">
-          <h3>Sokhna SALL </h3>
-          <span className="role">Membre du Jury</span>
+          <h3>Amadou </h3>
+          <span className="role">Président du Jury</span>
         </div>
       </div>
 
@@ -36,7 +36,16 @@ const AdminSidebar: React.FC = () => {
               <i className="fas fa-clipboard-check"></i> Mes Évaluations
             </Link>
           </li>
-          
+          <li>
+            <Link to="/mon-jury">
+              <i className="fas fa-users"></i> Mon Jury
+            </Link>
+          </li>
+          <li>
+            <Link to="/classement">
+              <i className="fas fa-trophy"></i> Classement
+            </Link>
+          </li>
         </ul>
       </nav>
 

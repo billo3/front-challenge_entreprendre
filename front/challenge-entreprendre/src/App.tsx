@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminSidebar from './components/AdminSidebar';
 import AdminTopbar from './components/AdminTopbar';
-import PresidentJury from './components/MembreJury';
+import MembreJury from './components/MembreJury';
+import MonJury from './components/MonJury';
 import Evaluations from './pages/Evaluations';
-
+import Classement from './pages/Classement';
 
 
 const App: React.FC = () => {
@@ -16,8 +17,10 @@ const App: React.FC = () => {
           <AdminTopbar />
           <div className="admin-content">
             <Routes>
-              <Route path="/" element={<PresidentJury />} />
+              <Route path="/" element={<MembreJury />} />
               <Route path="/evaluations" element={<Evaluations />} />
+              <Route path="/mon-jury" element={<MonJury />} />
+              <Route path="/classement" element={<Classement />} />
               
               <Route path="/mon-profil" element={<div><h1>Mon Profil</h1><p>À venir...</p></div>} />
               <Route path="/index" element={<div><h1>Site Public</h1><p>À venir...</p></div>} />
