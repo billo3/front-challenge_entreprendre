@@ -48,16 +48,16 @@ const Classement: React.FC = () => {
   const [isValidated, setIsValidated] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const handleScoreChange = (id: number, value: string) => {
-    if (isValidated) {
-      alert('La sélection est validée, les scores ne peuvent plus être modifiés.');
-      return;
-    }
-    const numValue = parseFloat(value);
-    setProjects(projects.map((project) =>
-      project.id === id ? { ...project, adjustedScore: isNaN(numValue) ? '' : numValue } : project
-    ));
-  };
+  // const handleScoreChange = (id: number, value: string) => {
+  //   if (isValidated) {
+  //     alert('La sélection est validée, les scores ne peuvent plus être modifiés.');
+  //     return;
+  //   }
+  //   const numValue = parseFloat(value);
+  //   setProjects(projects.map((project) =>
+  //     project.id === id ? { ...project, adjustedScore: isNaN(numValue) ? '' : numValue } : project
+  //   ));
+  // };
 
   const handleViewProject = (project: Project) => {
     setSelectedProject(project);

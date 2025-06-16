@@ -32,10 +32,10 @@ const MembreJury: React.FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const projects: Project[] = [
-    { id: '1', name: 'GreenCity', description: "Solution d'urbanisme durable pour villes intelligentes", category: 'Environnement' },
-    { id: '2', name: 'FinTech Pro', description: "Plateforme d'inclusion financière pour entrepreneurs", category: 'Finance' },
-  ];
+  // const projects: Project[] = [
+  //   { id: '1', name: 'GreenCity', description: "Solution d'urbanisme durable pour villes intelligentes", category: 'Environnement' },
+  //   { id: '2', name: 'FinTech Pro', description: "Plateforme d'inclusion financière pour entrepreneurs", category: 'Finance' },
+  // ];
 
   const evaluations: Evaluation[] = [
     {
@@ -70,10 +70,10 @@ const MembreJury: React.FC = () => {
     { rank: 3, project: 'SmartCity', team: 'Équipe Delta', score: '75/100', phase: 'Phase 1' },
   ];
 
-  const openModal = (project: Project) => {
-    setSelectedProject(project);
-    setModalIsOpen(true);
-  };
+  // const openModal = (project: Project) => {
+  //   setSelectedProject(project);
+  //   setModalIsOpen(true);
+  // };
 
   const closeModal = () => {
     setModalIsOpen(false);
