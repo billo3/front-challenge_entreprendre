@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AdminSidebar: React.FC = () => {
+const RapporteurSidebar: React.FC = () => {
   return (
     <aside className="admin-sidebar">
       <div className="sidebar-header">
@@ -16,33 +16,28 @@ const AdminSidebar: React.FC = () => {
 
       <div className="admin-profile">
         <div className="profile-avatar">
-          <i className="fas fa-gavel"></i>
+          <i className="fas fa-file-alt"></i>
         </div>
         <div className="profile-info">
-          <h3>Sokhna </h3>
-          <span className="role">Membre du Jury</span>
+          <h3>Mariam</h3>
+          <span className="role">Rapporteur</span>
         </div>
       </div>
 
       <nav className="admin-nav">
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/rapports/dashboard">
               <i className="fas fa-tachometer-alt"></i> Tableau de Bord
             </Link>
           </li>
           <li>
-            <Link to="/evaluations">
-              <i className="fas fa-clipboard-check"></i> Mes Évaluations
+            <Link to="/rapports/rapports">
+              <i className="fas fa-file-signature"></i> Gérer Rapports
             </Link>
           </li>
           <li>
-            <Link to="/mon-jury">
-              <i className="fas fa-users"></i> Mon Jury
-            </Link>
-          </li>
-          <li>
-            <Link to="/classement">
+            <Link to="/rapports/classement">
               <i className="fas fa-trophy"></i> Classement
             </Link>
           </li>
@@ -58,4 +53,4 @@ const AdminSidebar: React.FC = () => {
   );
 };
 
-export default AdminSidebar;
+export default RapporteurSidebar;

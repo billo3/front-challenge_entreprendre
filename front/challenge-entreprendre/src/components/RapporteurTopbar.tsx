@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const AdminTopbar: React.FC = () => {
+const RapporteurTopbar: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   return (
@@ -16,13 +16,17 @@ const AdminTopbar: React.FC = () => {
       </div>
 
       <div className="topbar-actions">
-      
+        <div className="topbar-notification">
+          <i className="fas fa-bell"></i>
+          <span className="notification-badge">1</span>
+        </div>
+
         <div
           className="topbar-profile"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
           <i className="fas fa-user-circle"></i>
-          <span>Sokhna</span>
+          <span>Mariam the Analyst</span>
           <i className="fas fa-chevron-down"></i>
           {isDropdownOpen && (
             <div className="profile-dropdown">
@@ -40,4 +44,4 @@ const AdminTopbar: React.FC = () => {
   );
 };
 
-export default AdminTopbar;
+export default RapporteurTopbar;
